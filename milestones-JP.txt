@@ -1,0 +1,136 @@
+Challenge 06: Final Project Milestones and Early Progress
+Name: Jay Patel
+Team: Jay Patel and Ohm Patel
+Project: Hotel Management Simulator
+
+PROGRESS SUMMARY
+I worked on the maintenance-request prototype in main.cpp and maintenance.h.
+It lets users add, view, and complete requests through a menu. Each request
+stores an ID, location, problem, and urgency. The priority queue selects the
+most urgent request first and breaks ties by submission order.
+
+I compiled and tested the program on Hydra. It compiled without warnings.
+Empty queues, urgency ordering, equal-priority requests, viewing without
+removing, and invalid urgency all worked in my tests. Requests were completed
+in the expected order: 2, 3, 4, then 1. I uploaded both source files to GitHub.
+
+On October 22, Ohm and I combined my maintenance system and his graph
+through one main.cpp. The program now uses maintenance.h and graph.h,
+displays a two-floor hotel with 14 locations and six guest rooms, and
+manages maintenance requests through the same menu. I tested the combined
+program on Hydra: displaying locations and adding, viewing, and completing
+a request worked. Location validation and BFS routing are still unfinished.
+
+REFLECTION AND NEXT STEPS
+The menu and priority ordering worked during testing. My Mac had a linker/SDK
+error, so I switched to Hydra and successfully compiled and ran the program.
+
+I am handling requests and the menu, while Ohm is working on the graph
+and routing. Combining our work into one main.cpp went smoothly. Next I
+will add a pending-request display and location validation, while Ohm
+works on BFS.
+
+SHARED REPOSITORY
+https://github.com/jaypatel-cs/hotel-management-simulator
+
+INDIVIDUAL CODE CONTRIBUTION
+My maintenance-request prototype and menu are in main.cpp and maintenance.h
+at the root of the shared repository linked above. Ohm contributed graph.h,
+and we combined both parts through main.cpp on October 22.
+
+INDIVIDUAL TIME LOG
+October 13, 2026 | 12:45-2:00 PM | 1 hour 15 minutes | With Ohm
+Discussed responsibilities and project organization.
+
+October 15, 2026 | 12:45-2:00 PM | 1 hour 15 minutes | With Ohm
+Started main.cpp and maintenance.h for the maintenance-request system.
+
+October 19, 2026 | 11:20 AM-12:20 PM | 1 hour | Lab with Ohm
+Reviewed our progress and discussed the milestone plan and remaining work.
+
+October 20, 2026 | 12:45-2:00 PM | 1 hour 15 minutes | With Ohm
+Continued implementation and finished the current maintenance prototype.
+
+October 21, 2026 | 30 minutes
+Compiled and tested the program on Hydra, created the GitHub repository,
+and uploaded the source files.
+
+October 22, 2026 | 12:35-1:00 PM | 25 minutes | With Ohm
+Combined our individual maintenance and graph code into one main.cpp,
+set up the two-floor hotel layout, and tested the combined program on Hydra.
+
+Total recorded duration: 5 hours 40 minutes.
+
+ORIGINAL MILESTONE RUBRIC FROM LAB (UNCHANGED)
+
+September 30- Projected Proposal
+We sent Dr. Enrich our proposal of a Hotel Management Simulator and its core features. We
+decided to use adjacency lists for the hotel layout, a priority queue for request and BFS for finding the shortest route to a location.
+
+October 19- Beginning the Graph
+We are beginning by outlining a basic independent hotel with rooms, hallways, stairs and
+elevator. Each location will be a vertex and connections between locations will be the edges.
+
+Milestones: Complete the Hotel Graph — 10 points
+Hope to have it done by October 30
+Implement the hotel layout by using an adjacency list as proposed. Use functions to create
+locations and connect them. By the end the program should compile and correctly display each location and its connections.
+
+Implement BFS and Prepare Presentation Material — 12 points
+Hope to have it done by November 10
+Use BFS to find the shortest route by number of edges from a maintenance employee’s starting location to a requested location. Prepare the graph and BFS by November 10 for the team's algorithm presentation. Should correctly display the shortest route and its edge count, handle identical starting and destination location, and report when there are no routes. 
+Handle Closures and Reachability — 10 points
+Hope to have it done by November 20
+Allow connections to be closed and be accessed again to represent unavailable hallways or
+elevators. BFS will avoid the closed connections, and find other routes that are available, and identify rooms that cannot be reached. Reopening a connection for availability for routes
+
+Integration, Algorithm Comparison, and Final Verification — 8 points
+Hope to have it done by November 22
+Connect my graph and routing features to the maintenance request priority queue. The
+simulator outputs the highest-priority maintenance request and displays a route to its location or will tell you if the route to the room is not available. The core features work together, and the project is nearly complete for the November 23 lab demo.
+
+Final testing
+We want the project done by November 27
+Make sure routing, closures, unreachable destinations, and integration with maintenance
+requests work properly. Make sure the program compiles and prepare for December 1st
+
+REVISED PLAN AFTER LAB: OCTOBER 21, 2026
+I propose taking maintenance requests, priority ordering, and the menu while
+Ohm takes the graph, BFS, and closures. We will share integration, testing,
+and the presentation. I will confirm the split with Ohm. These milestones
+replace my original 40-point rubric.
+
+REVISED INDIVIDUAL MILESTONE RUBRIC: 40 POINTS
+
+1. Maintenance-Request Data and Creation: 10 points
+Target: October 30
+Create requests with unique IDs, locations, descriptions, urgency, and
+submission order. Complete when requests store the correct information,
+IDs stay unique, and invalid urgency or missing information is rejected.
+
+2. Priority Queue and Presentation Material: 12 points
+Target: November 10
+Order requests by urgency and then submission order. Complete when viewing
+preserves requests, completion removes the correct request, and empty queues
+are handled. Prepare my part of the November 10-17 presentation explaining
+the priority queue, an unsorted-list alternative, and the tradeoffs.
+
+3. Simulator Menu and Request Workflow: 10 points
+Target: November 20
+Finish options to add, view, and complete requests, including displaying all
+pending requests without changing the queue. Use the hotel graph to validate
+locations. Complete when the menu handles invalid input, rejects unknown
+locations, and supports requests from creation through completion.
+
+4. Integration, Evaluation, and Documentation: 8 points
+Integration target: November 22
+Final testing and documentation target: November 27
+Connect requests to Ohm's graph and BFS. Display the highest-priority request
+and a route to it, or report an unreachable location while keeping the
+request pending. Have the core features working before the November 23 demo.
+Compare a heap-based priority queue with an unsorted list using identical
+requests. Verify matching processing order and measure insertion and
+processing times at increasing sizes. Finish testing and instructions for
+running and using my part of the program.
+
+Total: 40 points
